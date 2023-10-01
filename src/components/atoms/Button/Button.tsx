@@ -1,12 +1,11 @@
-import { forwardRef } from "react";
-import type {
-  ButtonHTMLAttributes,
-  ForwardedRef,
-  PropsWithChildren,
-} from "react";
-import { button } from "./Button.css";
-import type { ButtonVariants } from "./Button.type";
-import classNames from "classnames";
+import type { ButtonVariants } from './Button.type';
+
+import { forwardRef } from 'react';
+import type { ButtonHTMLAttributes, ForwardedRef, PropsWithChildren } from 'react';
+
+import classNames from 'classnames';
+
+import { button } from './Button.css';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   ButtonVariants & {
@@ -18,7 +17,14 @@ function Button(props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) {
   return (
     <button
       ref={ref}
-      className={classNames(button({ color, size, rounded }), className)}
+      className={classNames(
+        button({
+          color,
+          size,
+          rounded
+        }),
+        className
+      )}
       {...other}
     >
       {children}
@@ -26,6 +32,4 @@ function Button(props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) {
   );
 }
 
-export default forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
-  Button
-);
+export default forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(Button);
