@@ -6,6 +6,7 @@ import type {
 } from "react";
 import { button } from "./Button.css";
 import type { ButtonVariants } from "./Button.type";
+import classNames from "classnames";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   ButtonVariants & {
@@ -17,7 +18,7 @@ function Button(props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) {
   return (
     <button
       ref={ref}
-      className={[button({ color, size, rounded })].toString()}
+      className={classNames(button({ color, size, rounded }), className)}
       {...other}
     >
       {children}
