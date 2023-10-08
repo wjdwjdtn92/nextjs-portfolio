@@ -13,13 +13,13 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   };
 
 function Button(props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) {
-  const { children, className, color, size, rounded, ...other } = props;
+  const { children, className, variant, size, rounded, ...other } = props;
   return (
     <button
       ref={ref}
       className={classNames(
         button({
-          color,
+          variant,
           size,
           rounded
         }),
