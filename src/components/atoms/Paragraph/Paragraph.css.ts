@@ -1,13 +1,13 @@
 import { recipe } from '@vanilla-extract/recipes';
 import { globalTheme } from '@/styles/globalTheme.css';
 
-export const heading = recipe({
+export const paragraph = recipe({
   variants: {
     size: {
-      ...globalTheme.typography.Heading
+      ...globalTheme.typography.Paragraph
     }
   },
   defaultVariants: {
-    size: 'Large'
+    size: 'Medium'
   }
 });

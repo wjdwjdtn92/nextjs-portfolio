@@ -1,5 +1,5 @@
 import { RecipeVariants } from '@vanilla-extract/recipes';
 
-import { heading } from './Heading.css';
+import { paragraph } from './Paragraph.css';
 
-export type HeadingVariants = RecipeVariants<typeof heading>;
+export type ParagraphVariants = RecipeVariants<typeof paragraph>;
